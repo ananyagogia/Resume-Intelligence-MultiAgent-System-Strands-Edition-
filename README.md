@@ -24,3 +24,40 @@ cd resume_intelligence
 python -m venv venv
 source venv/bin/activate  # On Windows run: venv\Scripts\activate
 ```
+
+## 📂 Project Directory Structure
+
+To run this application successfully, ensure your local directory is structured exactly as follows:
+
+```text
+resume_intelligence/
+│
+├── .env                        # Environment configuration (Gemini API Key)
+├── requirements.txt            # Python dependencies configuration
+├── README.md                   # Setup and execution instructions
+├── app.py                      # Streamlit Enterprise UI Dashboard
+│
+├── core/
+│   ├── __init__.py
+│   ├── config.py               # Pydantic environment configuration
+│   ├── exceptions.py           # Custom domain exceptions mapping
+│   ├── logger.py               # Standard log system bootstrapping
+│   └── models.py               # Data architecture typing schemas
+│
+├── ingestion/
+│   ├── __init__.py
+│   └── document_loader.py      # LangChain document ingestion framework
+│
+├── engines/
+│   ├── __init__.py
+│   ├── ats_engine.py           # Deterministic compliance matrices logic
+│   ├── jd_matcher.py           # Technical token vocabulary analytics
+│   └── writing_analyser.py     # Deterministic linguistic parsing module
+│
+└── agents/
+    ├── __init__.py
+    ├── orchestrator.py         # Central Strands Multi-Agent coordinator
+    ├── ats_agent.py            # Strands ATS system context wrapper
+    ├── jd_agent.py             # Strands JD extraction profile worker
+    ├── writing_agent.py        # Strands linguistic health specialist
+    └── reporting_agent.py      # Strands optimization synthesis reporter
